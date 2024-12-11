@@ -12,7 +12,7 @@ export default function ProductCart() {
     //     <p className="font-[400]">$59.99</p>
     //   </div>
     // </Card>
-    <Card className="flex items-center gap-4 rounded-[20px] relative bg-[#c3a4cf4a]">
+    <Card className="flex items-center gap-4 rounded-[20px] relative ">
         <img src={burger} className="w-[100px] h-[100px] rounded-[20px]"  />
         <div className="py-1 flex gap-[3px] flex-col justify-between">
             <h2 className="font-[600] text-[20px] ">Burger Ladand</h2>
