@@ -16,7 +16,7 @@ export default function ProductCart() {
       <img src={burger} className="w-[100px] h-[100px] rounded-[20px]" />
       <div className="   ">
         <div className="flex justify-between ">
-        <h2 className="font-[500] text-[20px] leading-[25px] pb- text-[#ed8a6d]">Burger Ladand</h2>
+        <h2 className="font-[500] text-[20px] leading-[25px] pb- text-red-500">Burger Ladand</h2>
          
         </div>
         
@@ -25,7 +25,7 @@ export default function ProductCart() {
         </p>
         <div className="flex items-center justify-between">
         <span className="text-[12px] font-[500] bg-[#f2e9ff] my-1 py-1 px-2 rounded-[20px] text-black">Burger</span>
-        <span className="text-[18px] font-[500] bg-[] text-[#ed8a6d]">$59.99</span>
+        <span className="text-[18px] font-[500] bg-[] text-red-500">$59.99</span>
         </div>
        
         {/* <span className="text-[18px] font-[500] ">$59.99</span> */}
