@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "./ui/card";
 import meals003 from "../assets/meals0003.png";
-import burger from "../assets/burger.jpg"
+import burger from "../assets/burger.jpg";
 
 export default function ProductCart() {
   return (
@@ -12,14 +12,26 @@ export default function ProductCart() {
     //     <p className="font-[400]">$59.99</p>
     //   </div>
     // </Card>
-    <Card className="flex items-center gap-4 rounded-[20px] relative ">
-        <img src={burger} className="w-[100px] h-[100px] rounded-[20px]"  />
-        <div className="py-1 flex gap-[3px] flex-col justify-between">
-            <h2 className="font-[600] text-[20px] ">Burger Ladand</h2>
-            <p className="text-[14px] leading-[15px] pr-10"> Whereas recognition of the inherent dignity </p>
-            <span className="text-[18px] font-[500] ">$59.99</span>
+    <Card className="flex gap-4 rounded-[20px] relative p-1 pr-4">
+      <img src={burger} className="w-[100px] h-[100px] rounded-[20px]" />
+      <div className="   ">
+        <div className="flex justify-between ">
+        <h2 className="font-[500] text-[20px] leading-[25px] pb- text-[#ed8a6d]">Burger Ladand</h2>
+         
         </div>
-        {/* <div className="bg-[#c3a4cf4a] absolute  right-0 h-full w-[50%]"></div> */}
+        
+        <p className="text-[13px] leading-[15px] pr-10 py-1">
+          Whereas recognition of the inherent dignity
+        </p>
+        <div className="flex items-center justify-between">
+        <span className="text-[12px] font-[500] bg-[#f2e9ff] my-1 py-1 px-2 rounded-[20px] text-black">Burger</span>
+        <span className="text-[18px] font-[500] bg-[] text-[#ed8a6d]">$59.99</span>
+        </div>
+       
+        {/* <span className="text-[18px] font-[500] ">$59.99</span> */}
+      </div>
+     
+      {/* <div className="bg-[#c3a4cf4a] absolute  right-0 h-full w-[50%]"></div> */}
     </Card>
   );
 }
