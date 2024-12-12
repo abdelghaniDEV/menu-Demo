@@ -29,6 +29,15 @@ export default function ListCategories() {
         <Button className=" py-2 px-3 rounded-[20px]  bg-[#F5F5F8] ">
           Salade
         </Button>
+        <Button className="py-2 px-3 rounded-[20px] bg-[#F5F5F8] ">
+          HotDog
+        </Button>
+        <Button className=" py-2 px-3 rounded-[20px] bg-[#F5F5F8] ">
+          Burger
+        </Button>
+        <Button className=" py-2 px-3 rounded-[20px]  bg-[#F5F5F8] ">
+          Salade
+        </Button>
       </Slider>
     </div>
   );
