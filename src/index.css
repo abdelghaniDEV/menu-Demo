@@ -9,7 +9,9 @@
 body {
   font-family: "Poppins", serif;
   /* font-family: "Ubuntu", sans-serif; */
+
 }
+
 
 @layer base {
   :root {

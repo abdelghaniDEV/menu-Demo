@@ -16,7 +16,7 @@ export default function ProductCart() {
       <img src={burger} className="w-[100px] h-[100px] rounded-[20px]" />
       <div className="   ">
         <div className="flex justify-between ">
-        <h2 className="font-[500] text-[20px] leading-[25px] pb- text-red-500">Burger Ladand</h2>
+        <h2 className="font-[600] text-[20px] leading-[25px] pb">Burger Ladand</h2>
          
         </div>
         
