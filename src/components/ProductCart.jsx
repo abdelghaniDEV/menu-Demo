@@ -20,7 +20,7 @@ export default function ProductCart() {
          
         </div>
         
-        <p className="text-[13px] leading-[15px] pr-10 py-1">
+        <p className="text-[12px] leading-[15px] pr-10 py-1">
           Whereas recognition of the inherent dignity
         </p>
         <div className="flex items-center justify-between">

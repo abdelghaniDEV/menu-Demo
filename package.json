@@ -16,6 +16,9 @@
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-multi-carousel": "^2.8.5",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
