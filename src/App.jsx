@@ -10,6 +10,10 @@ import ProductCart from "./components/ProductCart";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ListCategories from "./components/ListCategories";
+import meals003 from "./assets/meals0003.png";
+import burger from "./assets/burger.jpg";
+import meals004 from "./assets/mels0005.avif"
+import meals0005 from "./assets/meals0004.avif"
 
 function App() {
   const responsive = {
@@ -67,10 +71,11 @@ function App() {
         </div>
         <div>
           <div className="grid grid-cols-1 gap-5 ">
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
+            <ProductCart image={meals0005} name={"Salade Nicoise"} description={"Une sélection de magasins et de chaînes de marque connus de tous afin de vous servir au mieux. Découvrez toutes les catégories"} price={37.55} />
+            <ProductCart image={burger} name={"Burger Checken"} description={"Une sélection de magasins et de chaînes de marque connus de tous afin de vous servir au mieux. Découvrez toutes les catégories"} price={40.55} />
+            <ProductCart image={meals004} name={"Pitza Mozarila"} description={"Une sélection de magasins et de chaînes de marque connus de tous afin de vous servir au mieux. Découvrez toutes les catégories"} price={80.55} />
+            <ProductCart image={meals0005} name={"Salade Nicoise"} description={"Une sélection de magasins et de chaînes de marque connus de tous afin de vous servir au mieux. Découvrez toutes les catégories"} price={37.55} />
+            <ProductCart image={burger} name={"Burger Checken"} description={"Une sélection de magasins et de chaînes de marque connus de tous afin de vous servir au mieux. Découvrez toutes les catégories"} price={40.55} />
           </div>
         </div>
       </div>
