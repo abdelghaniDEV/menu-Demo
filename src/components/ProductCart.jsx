@@ -5,33 +5,21 @@ import burger from "../assets/burger.jpg";
 
 export default function ProductCart() {
   return (
-    // <Card className="flex flex-col justify-center items-center rounded-[40px] overflow-hidden ">
-    //   <img src={meals003} alt="Meal 3" className="w-[120px] h-[120px]" />
-    //   <div className="flex items-center flex-col bg-[#c3a4cf4a] w-full rounded-t-[10px] py-2">
-    //     <h2 className="text-[15px] font-[500]">Sandwitch Ladand</h2>
-    //     <p className="font-[400]">$59.99</p>
-    //   </div>
-    // </Card>
-    <Card className="flex gap-4 rounded-[20px] relative p-1 pr-4">
-      <img src={burger} className="w-[100px] h-[100px] rounded-[20px]" />
-      <div className="   ">
-        <div className="flex justify-between ">
-        <h2 className="font-[600] text-[20px] leading-[25px] pb">Burger Ladand</h2>
-         
+    <div className="h-[100px]">
+      <div className="flex gap-[18px]">
+        <div>
+          <h2 className="font-[500]">Salade Nicoise</h2>
+          <p className="text-[12px] overflow-hidden h-10 text-ellipsis">
+            Une sélection de magasins et de chaînes de marque connus de tous
+            afin de vous servir au mieux. Découvrez toutes les catégories
+          </p>
+          <h4 className="font-[500] text-[14px] pt-2">37.00 MAD</h4>
         </div>
-        
-        <p className="text-[12px] leading-[15px] pr-10 py-1">
-          Whereas recognition of the inherent dignity
-        </p>
-        <div className="flex items-center justify-between">
-        <span className="text-[12px] font-[500] bg-[#f2e9ff] my-1 py-1 px-2 rounded-[20px] text-black">Burger</span>
-        <span className="text-[18px] font-[500] bg-[] text-red-500">$59.99</span>
+        <div className="  ">
+          <img src={burger} className=" w-[300px]  rounded-[10px]"/>
         </div>
-       
-        {/* <span className="text-[18px] font-[500] ">$59.99</span> */}
       </div>
-     
-      {/* <div className="bg-[#c3a4cf4a] absolute  right-0 h-full w-[50%]"></div> */}
-    </Card>
+      <hr className="mt-3"/>
+    </div>
   );
 }
