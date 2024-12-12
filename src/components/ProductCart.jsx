@@ -13,7 +13,7 @@ export default function ProductCart() {
             Une sélection de magasins et de chaînes de marque connus de tous
             afin de vous servir au mieux. Découvrez toutes les catégories
           </p>
-          <h4 className="font-[500] text-[14px] pt-2">37.00 MAD</h4>
+          <h4 className="font-[500] text-[14px] pt-[6px]">37.00 MAD</h4>
         </div>
         <div className="  ">
           <img src={burger} className=" w-[300px]  rounded-[10px]"/>
