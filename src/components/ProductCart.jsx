@@ -6,6 +6,14 @@ import meals004 from "../assets/mels0005.avif";
 import meals0005 from "../assets/meals0004.avif";
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function ProductCart({ image, price, description, name }) {
   const [open, setOpen] = useState(false);
@@ -16,14 +24,13 @@ export default function ProductCart({ image, price, description, name }) {
       transition: {
         ease: "easeInOut",
         duration: 0.2,
-       
       },
     },
   };
 
   return (
     <div className="h-[100px]">
-      <div className="flex gap-[18px] container"  onClick={() => setOpen(true)}>
+      <div className="flex gap-[18px] container" onClick={() => setOpen(true)}>
         <div>
           <h2 className="font-[500]">{name}</h2>
           <p className="text-[12px] overflow-hidden h-10 text-ellipsis text-clip">
@@ -36,7 +43,7 @@ export default function ProductCart({ image, price, description, name }) {
         </div>
       </div>
       <hr className="mt-3" />
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {open && (
           <motion.div
             className=" z-[2000] bg-white rounded-t-[50px] fixed w-full h-screen  overflow-hidden top-[100px]"
@@ -58,7 +65,32 @@ export default function ProductCart({ image, price, description, name }) {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger></DialogTrigger>
+        <DialogContent className="rounded-t-[50px] border-none">
+          <DialogHeader>
+           
+            <DialogDescription>
+              <div className="relative">
+                <img
+                  src={image}
+                  className="rounded-t-[50px] w-full h-[350px]"
+                />
+                {/* <X
+                  className="absolute top-4 h-8 w-8 right-4 bg-white p-1 rounded-full cursor-pointer"
+                  onClick={() => setOpen(false)}
+                /> */}
+              </div>
+              <div className="container flex flex-col gap-[5px] py-3 text-black text-start">
+                <h1 className="font-[600] text-[20px]">{name}</h1>
+                <span className="font-[600] ">{price} $</span>
+                <p className="text-[14px]">{description}</p>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
