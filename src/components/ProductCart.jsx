@@ -39,17 +39,17 @@ export default function ProductCart({ image, price, description, name }) {
       <AnimatePresence>
         {open && (
           <motion.div
-            className=" z-[2000] bg-white  fixed w-full h-[100vh] overflow-hidden top-0"
-            // variants={item}
-            // initial={{ height: 0, opacity: 0 }}
-            // animate={{ height: "100vh", opacity: 1 }}
-            // transition={{ duration: 0.5 }}
-            // exit="exit"
+            className=" z-[2000] bg-white rounded-t-[50px] fixed w-full h-screen  overflow-hidden top-[100px]"
+            variants={item}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "100vh", opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            exit="exit"
           >
             
             <div className="relative">
-              <img src={image} className="rounded-b-[50px] w-full" />
-              <X className="absolute top-2 h-8 w-8 right-2 bg-white p-1 rounded-full cursor-pointer" onClick={() => setOpen(false)}/>
+              <img src={image} className="rounded-t-[50px] w-full h-[350px]" />
+              <X className="absolute top-4 h-8 w-8 right-4 bg-white p-1 rounded-full cursor-pointer" onClick={() => setOpen(false)}/>
             </div>
             <div className="container flex flex-col gap-[5px] pt-3">  
               <h1 className="font-[600] text-[20px]">{name}</h1>
