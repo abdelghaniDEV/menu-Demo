@@ -29,48 +29,27 @@ export default function ProductCart({ image, price, description, name }) {
   };
 
   return (
-    <div className="h-[100px]">
-      <div className="flex gap-[18px] container" onClick={() => setOpen(true)}>
-        <div>
-          <h2 className="font-[500]">{name}</h2>
-          <p className="text-[12px] overflow-hidden h-10 text-ellipsis text-clip">
-            {description}
-          </p>
+    <div className="h-[100px] container">
+      <div
+        className="flex justify-between gap-6   border-b-[1px] pb-3 "
+        onClick={() => setOpen(true)}
+      >
+        <div className="flex flex-col justify-between">
+          <div>
+            <h2 className="font-[500]">{name}</h2>
+            <p className="text-[12px] overflow-hidden h-10 text-ellipsis ">
+              {description}
+            </p>
+          </div>
           <h4 className="font-[500] text-[14px] pt-[6px]">{price} MAD</h4>
         </div>
-        <div className="  ">
-          <img src={image} className=" w-[300px] h-full rounded-[10px]" />
-        </div>
+
+        <img src={image} className=" w-[100px] h-[100px] rounded-[10px]" />
       </div>
-      <hr className="mt-3" />
-      {/* <AnimatePresence>
-        {open && (
-          <motion.div
-            className=" z-[2000] bg-white rounded-t-[50px] fixed w-full h-screen  overflow-hidden top-[100px]"
-            variants={item}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "100vh", opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            exit="exit"
-          >
-            
-            <div className="relative">
-              <img src={image} className="rounded-t-[50px] w-full h-[350px]" />
-              <X className="absolute top-4 h-8 w-8 right-4 bg-white p-1 rounded-full cursor-pointer" onClick={() => setOpen(false)}/>
-            </div>
-            <div className="container flex flex-col gap-[5px] pt-3">  
-              <h1 className="font-[600] text-[20px]">{name}</h1>
-              <span className="font-[600] ">{price} $</span>
-              <p className="text-[14px]">{description}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence> */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger></DialogTrigger>
         <DialogContent className="rounded-t-[50px] border-none">
           <DialogHeader>
-           
             <DialogDescription>
               <div className="relative">
                 <img

@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Button } from "./ui/button";
 
-export default function ListCategories() {
-  const [selectCatag , setSelectCateg] = useState('')
+export default function ListCategories({ categories }) {
+  const [selectCatag, setSelectCateg] = useState("");
   const settings = {
     // dots: true, // Show navigation dots
     // infinite: true, // Infinite loop
@@ -22,20 +22,20 @@ export default function ListCategories() {
   // },[selectCatag])
 
   const changeCategory = (e) => {
-    const target = e.target
-    target.classList.add('border-b-[#0B363C]')
-  }
-
-
+    const target = e.target;
+    target.classList.add("border-b-[#0B363C]");
+  };
 
   return (
     <div>
       <Slider {...settings} className="container overflow-hidden my-3">
-        <Button className="" id='Salade' onClick={(e) => changeCategory(e)}>Salade</Button>
-        <Button>Plats</Button>
-        <Button>Sandwichs</Button>
-        <Button>Burger</Button>
-        <Button>Tacos</Button>
+        {categories?.map((category) => {
+          return (
+            <Button className="" id={category.name} onClick={(e) => changeCategory(e)}>
+              {category.name}
+            </Button>
+          );
+        })}
       </Slider>
     </div>
   );
