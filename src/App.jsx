@@ -53,6 +53,14 @@ function App() {
             <Search className="absolute right-[10px] text-[#BB86CF] top-[10px]" />
           </div>
         </div>
+        {/* <div className="container flex gap-1 pb-3">
+          <Button>Salade</Button>
+          <Button>Plats</Button>
+          <Button>Sandwichs</Button>
+          <Button>Burger</Button>
+          <Button>Tacos</Button>
+        </div> */}
+        <ListCategories />
         <div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
             <ProductCart
