@@ -40,9 +40,6 @@ export default function Home() {
       <Header />
       <div>
         <div className="container">
-          {/* <h1 className="font-[400] text-[33px] leading-[38px]">
-            What are you going to eat today ?
-          </h1> */}
           <div className="relative my-2">
             <input
               type="text"

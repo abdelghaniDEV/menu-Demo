@@ -27,9 +27,10 @@ export default function ListCategories({ categories , products , setProducts }) 
   },[selectCatag])
 
   const filterProducts = () => {
+    
     const filteredProducts = products?.filter((product) => product?.categoryId.name === selectCatag);
     setProducts(filteredProducts);
-    // setFilteredProducts(filteredProducts); // update filtered products state here if needed
+    
   }
  
   return (
