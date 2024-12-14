@@ -12,6 +12,7 @@ import axios from "axios";
 
 export default function Home() {
   const [menu , setMenu] = useState()
+  const [products , setProducts] = useState()
   const params = useParams();
   useEffect( () => {
     fetchMenu()
@@ -29,6 +30,7 @@ export default function Home() {
       );
       console.log(response.data.data.menu);
       setMenu(response.data.data.menu)
+      setProducts(response.data.data.menu.products)
     }catch (e) {
       console.error(e);
     }
@@ -47,13 +49,13 @@ export default function Home() {
               placeholder="Search Here ..."
               className="h-10 rounded-[20px] text-base w-full bg-[#F5F5F8] px-4 py-2 focus:outline-none "
             />
-            <Search className="absolute right-[10px] text-[#BB86CF] top-[10px]" />
+            <Search className="absolute right-[10px] text-[#F56949] top-[10px]" />
           </div>
         </div>
-        <ListCategories categories={menu?.categorys} />
+        <ListCategories categories={menu?.categorys} products={menu?.products} setProducts={setProducts} />
         <div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
-            {menu?.products?.map((product) => {
+            {products?.map((product) => {
               return <ProductCart
               image={product.image}
               name={product.name}

@@ -4,7 +4,10 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Button } from "./ui/button";
 
-export default function ListCategories({ categories }) {
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+export default function ListCategories({ categories , products , setProducts }) {
   const [selectCatag, setSelectCateg] = useState("");
   const settings = {
     // dots: true, // Show navigation dots
@@ -17,26 +20,35 @@ export default function ListCategories({ categories }) {
     arrows: true, // Show navigation arrows
   };
 
-  // useEffect(() => {
-  //   changeCategory()
-  // },[selectCatag])
+  useEffect(() => {
+    if(selectCatag) {
+      filterProducts()
+    }
+  },[selectCatag])
 
-  const changeCategory = (e) => {
-    const target = e.target;
-    target.classList.add("border-b-[#0B363C]");
-  };
-
+  const filterProducts = () => {
+    const filteredProducts = products?.filter((product) => product?.categoryId.name === selectCatag);
+    setProducts(filteredProducts);
+    // setFilteredProducts(filteredProducts); // update filtered products state here if needed
+  }
+ 
   return (
-    <div>
-      <Slider {...settings} className="container overflow-hidden my-3">
+    <div className="container py-2">
+      <Slider {...settings} className=" overflow-hidden ">
         {categories?.map((category) => {
           return (
-            <Button className="" id={category.name} onClick={(e) => changeCategory(e)}>
-              {category.name}
-            </Button>
+              <button
+                className={`font-[400] text-[13px] border-b-[2px] py-2 ${selectCatag === category?.name && 'border-b-[#F56949] text-[#F56949]'}`}
+                id={category.name}
+                onClick={(e) => setSelectCateg(category.name)}
+              >
+                {category.name}
+              </button>
+            
           );
         })}
       </Slider>
+      
     </div>
   );
 }
