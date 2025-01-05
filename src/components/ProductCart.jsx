@@ -1,11 +1,4 @@
 import React, { useState } from "react";
-import { Card } from "./ui/card";
-import meals003 from "../assets/meals0003.png";
-import burger from "../assets/burger.jpg";
-import meals004 from "../assets/mels0005.avif";
-import meals0005 from "../assets/meals0004.avif";
-import { AnimatePresence, motion } from "motion/react";
-import { X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -14,8 +7,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Card } from "./ui/card"
 
-export default function ProductCart({ image, price, description, name }) {
+export default function ProductCart({
+  image,
+  price,
+  description,
+  name,
+  template,
+}) {
   const [open, setOpen] = useState(false);
   const item = {
     exit: {
@@ -29,25 +29,34 @@ export default function ProductCart({ image, price, description, name }) {
   };
 
   return (
-    <div className="h-[100px] container">
-      <div
-        className="flex justify-between gap-6   border-b-[1px] pb-3 "
-        onClick={() => setOpen(true)}
-      >
-        <div className="flex flex-col justify-between">
+
+      <div className="flex justify-between border-b-[1px] pb-2 ">
+        <div className="w-[70%] flex flex-col justify-between">
           <div>
-            <h2 className="font-[500]">{name}</h2>
-            <p className="text-[12px] overflow-hidden h-10 text-ellipsis ">
+            <h1 className="font-[500]" style={{ 
+              color : template?.titleColor
+ 
+             }}>{name}</h1>
+            <p className="text-[12px] overflow-hidden h-10 text-ellipsis  " >
               {description}
             </p>
           </div>
-          <h4 className="font-[500] text-[14px] pt-[6px]">{price} MAD</h4>
+          <div>
+              <span className="font-[500] text-[14px]" style={{ 
+                color : template?.titleColor
+               }}>${price}</span>
+          </div>
         </div>
+        <div className="relative">
+          <img src={image} className=" w-[80px] h-[80px] border-[2px] border-white p-1 rounded-[20px]" />
+          <div className="absolute bottom-0 right-[-15px] rounded-tl-full z-[-1] h-[80%] w-[120px]" style={{ 
+            backgroundColor : template?.primaryColor
+           }}>
 
-        <img src={image} className=" w-[100px] h-[100px] rounded-[10px]" />
-      </div>
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger></DialogTrigger>
+          </div>
+        </div>
+        <Dialog open={open} onOpenChange={setOpen}>
+        
         <DialogContent className="rounded-t-[50px] border-none">
           <DialogHeader>
             <DialogDescription>
@@ -70,6 +79,9 @@ export default function ProductCart({ image, price, description, name }) {
           </DialogHeader>
         </DialogContent>
       </Dialog>
-    </div>
+      </div>
+
+      
+   
   );
 }
