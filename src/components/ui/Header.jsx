@@ -8,52 +8,80 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Header({ menu }) {
   return (
-    <div className="flex justify-between pt-4 items-center container" style={{ 
-      backgroundColor: menu?.template,
-      
-     }}>
+    <div
+      className="flex justify-between pt-4 items-center container"
+      style={{
+        backgroundColor: menu?.template,
+      }}
+    >
       <div>
         <span className="text-[20px] font-[600]">
           {menu?.restaurantId.name}
         </span>
         <div className="flex items-center gap-1">
-          <MapPin className="w-4 h-4 " style={{ 
-            color : menu?.template.primaryColor
-           }} />
+          <MapPin
+            className="w-4 h-4 "
+            style={{
+              color: menu?.template.primaryColor,
+            }}
+          />
           <span className=" text-gray-600 text-[12px]">
             {menu?.restaurantId.address}
           </span>
         </div>
       </div>
       <div>
-         <Info  className="h-8 w-8" style={{ 
-          color : menu?.template.primaryColor
-          }}/>
+        <Sheet>
+          <SheetTrigger>
+            <Info
+              className="h-8 w-8"
+              style={{
+                color: menu?.template.primaryColor,
+              }}
+            />
+          </SheetTrigger>
+          <SheetContent className="w-full">
+            <SheetHeader>
+              <SheetTitle></SheetTitle>
+              <div className="flex flex-col gap-2 items-center py-4">
+                <div>
+                  <img
+                    src={menu?.restaurantId.image}
+                    className="w-[200px] max-h-[100px]"
+                  />
+                </div>
+                <div className="flex items-center gap-1">
+                  <MapPin
+                    className="w-4 h-4 "
+                    style={{
+                      color: menu?.template.primaryColor,
+                    }}
+                  />
+                  <span className=" text-gray-600 text-[13px]">
+                    {menu?.restaurantId.address}
+                  </span>
+                </div>
+                <div>
+                  <p className="text-[13px]">
+                    {menu?.restaurantId.description}
+                  </p>
+                </div>
+              </div>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
       </div>
-      {/* <div>
-          <img src={menu?.restaurantId.image} className="h-[50px] "  />
-      </div> */}
-      {/* <div className="flex gap-2">
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-          <Globe className="w-8 h-8 rounded-full p-1" style={{ 
-            backgroundColor : template?.primaryColor
-           }} />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="mx-3">
-            <DropdownMenuLabel>Translate</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>English</DropdownMenuItem>
-            <DropdownMenuItem>Arabic</DropdownMenuItem>
-            <DropdownMenuItem>France</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-
-       
-      </div> */}
     </div>
   );
 }

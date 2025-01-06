@@ -30,7 +30,7 @@ export default function ProductCart({
 
   return (
 
-      <div className="flex justify-between border-b-[1px] pb-2 ">
+      <div className="flex justify-between md:flex-row-reverse border-b-[1px] md:border-none pb-2 ">
         <div className="w-[70%] flex flex-col justify-between">
           <div>
             <h1 className="font-[500]" style={{ 

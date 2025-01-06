@@ -67,7 +67,7 @@ export default function Home() {
           setFilter={setFilter}
         />
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-3 container gap-2 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 container gap-2 md:gap-6">
             {filter?.map((product) => {
               return (
                 <ProductCart
