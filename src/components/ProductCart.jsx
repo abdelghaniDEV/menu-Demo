@@ -7,7 +7,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Card } from "./ui/card"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+
+import { Card } from "./ui/card";
 
 export default function ProductCart({
   image,
@@ -29,34 +40,45 @@ export default function ProductCart({
   };
 
   return (
-
-      <div className="flex justify-between md:flex-row-reverse border-b-[1px] md:border-none pb-2 ">
-        <div className="w-[70%] flex flex-col justify-between">
-          <div>
-            <h1 className="font-[500]" style={{ 
-              color : template?.titleColor
- 
-             }}>{name}</h1>
-            <p className="text-[12px] overflow-hidden h-10 text-ellipsis  " >
-              {description}
-            </p>
-          </div>
-          <div>
-              <span className="font-[500] text-[14px]" style={{ 
-                color : template?.titleColor
-               }}>${price}</span>
-          </div>
+    <div className="flex justify-between md:flex-row-reverse border-b-[1px] cursor-pointer md:border-none pb-2 " >
+      <div className="w-[70%] flex flex-col justify-between" onClick={() => setOpen(true)}>
+        <div>
+          <h1
+            className="font-[500]"
+            style={{
+              color: template?.titleColor,
+            }}
+          >
+            {name}
+          </h1>
+          <p className="text-[12px] overflow-hidden h-10 text-ellipsis  ">
+            {description}
+          </p>
         </div>
-        <div className="relative">
-          <img src={image} className=" w-[80px] h-[80px] border-[2px] border-white p-1 rounded-[20px]" />
-          <div className="absolute bottom-0 right-[-15px] rounded-tl-full z-[-1] h-[80%] w-[120px]" style={{ 
-            backgroundColor : template?.primaryColor
-           }}>
-
-          </div>
+        <div>
+          <span
+            className="font-[500] text-[14px]"
+            style={{
+              color: template?.titleColor,
+            }}
+          >
+            ${price}
+          </span>
         </div>
-        <Dialog open={open} onOpenChange={setOpen}>
-        
+      </div>
+      <div className="relative" onClick={() => setOpen(true)}>
+        <img
+          src={image}
+          className=" w-[80px] h-[80px] border-[2px] border-white p-1 rounded-[20px]"
+        />
+        <div
+          className="absolute bottom-0 right-[-15px] rounded-tl-full z-[-1] h-[80%] w-[120px]"
+          style={{
+            backgroundColor: template?.primaryColor,
+          }}
+        ></div>
+      </div>
+      <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="rounded-t-[50px] border-none">
           <DialogHeader>
             <DialogDescription>
@@ -79,9 +101,7 @@ export default function ProductCart({
           </DialogHeader>
         </DialogContent>
       </Dialog>
-      </div>
-
       
-   
+    </div>
   );
 }
