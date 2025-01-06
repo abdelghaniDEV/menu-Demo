@@ -101,7 +101,7 @@ export default function ProductCart({
           </DialogHeader>
         </DialogContent>
       </Dialog>
-      
+
     </div>
   );
 }
