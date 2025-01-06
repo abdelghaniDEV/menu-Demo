@@ -22,7 +22,7 @@ export default function ListCategories({
   return (
     <div className="py-2 container">
       <Swiper
-        slidesPerView={3} // عدد الشرائح المعروضة في نفس الوقت
+        slidesPerView={4} // عدد الشرائح المعروضة في نفس الوقت
         spaceBetween={10} // المسافة بين الشرائح
         touchEventsTarget="container" // تفعيل اللمس
         breakpoints={{
