@@ -23,7 +23,7 @@ export default function ListCategories({
     <div className="py-2 container ">
       <Swiper
         slidesPerView={4} // عدد الشرائح المعروضة في نفس الوقت
-        spaceBetween={20} // المسافة بين الشرائح
+        spaceBetween={4} // المسافة بين الشرائح
         touchEventsTarget="container" // تفعيل اللمس
         breakpoints={{
           640: {
@@ -43,7 +43,7 @@ export default function ListCategories({
         {categories?.map((category) => (
           <SwiperSlide key={category._id} >
             <Button
-              className="h-8 w-[85px] border-[1px] rounded-[6px] mx-1"
+              className="h-8 w-[80px] border-[1px] rounded-[6px] mx-1"
               style={{
                 backgroundColor:
                   activeCategory === category._id
