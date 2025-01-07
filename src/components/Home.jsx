@@ -21,6 +21,8 @@ export default function Home() {
     fetchMenu();
   }, []);
 
+  
+
   const fetchMenu = async () => {
      
     try {
@@ -42,7 +44,10 @@ export default function Home() {
     }
   };
   return (
-    <div className="">
+    <div className=" min-h-screen z-10" style={{ 
+      backgroundColor: menu?.template.BackgroundColor,
+      fontFamily: menu?.template.fontFamily
+     }}>
       <Header menu={menu} />
       <div>
         <div className="container">

@@ -51,10 +51,14 @@ export default function Header({ menu }) {
               }}
             />
           </SheetTrigger>
-          <SheetContent className="w-full">
+          <SheetContent className="w-full" >
             <SheetHeader>
               <SheetTitle></SheetTitle>
-              <div className="flex flex-col gap-2 items-center py-4">
+              <div className="flex flex-col gap-2 items-center py-4" style={{ 
+                backgroundColor: menu?.template.backgroundColor,
+                fontFamily: menu?.template.fontFamily,
+               
+               }}>
                 <div>
                   <img
                     src={menu?.restaurantId.image}
