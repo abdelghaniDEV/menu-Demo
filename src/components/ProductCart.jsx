@@ -40,8 +40,11 @@ export default function ProductCart({
   };
 
   return (
-    <div className="flex justify-between md:flex-row-reverse border-b-[1px] cursor-pointer md:border-none pb-2  " >
-      <div className="w-[70%] flex flex-col justify-between " onClick={() => setOpen(true)}>
+    <div className="flex justify-between md:flex-row-reverse border-b-[1px] cursor-pointer md:border-none pb-2  ">
+      <div
+        className="w-[70%] flex flex-col justify-between "
+        onClick={() => setOpen(true)}
+      >
         <div>
           <h1
             className="font-[500]"
@@ -52,8 +55,8 @@ export default function ProductCart({
             {name}
           </h1>
           <p className="text-[12px] overflow-hidden line-clamp-2">
-  {description}
-</p>
+            {description}
+          </p>
         </div>
         <div>
           <span
@@ -74,7 +77,7 @@ export default function ProductCart({
         <div
           className="absolute bottom-0 right-[-15px] rounded-tl-full z-[-1] h-[80%]  w-[120px]"
           style={{
-            backgroundColor: template?.primaryColor
+            backgroundColor: template?.primaryColor,
           }}
         ></div>
       </div>
@@ -101,7 +104,6 @@ export default function ProductCart({
           </DialogHeader>
         </DialogContent>
       </Dialog>
-
     </div>
   );
 }
