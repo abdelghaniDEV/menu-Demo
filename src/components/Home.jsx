@@ -58,7 +58,7 @@ export default function Home() {
     <>
       {loading === false ? (
         <div className="reltive">
-           <img src={leading}  className="absolute top-[30%] left-[50%] translate-x-[-50%] translate-y-[-50%]"/>
+           <img src={leading}  className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"/>
         </div>
       ) : (
         <div
