@@ -66,6 +66,7 @@ export default function Home() {
           style={{
             backgroundColor: menu?.template.BackgroundColor,
             fontFamily: menu?.template.fontFamily,
+            direction: menu?.template.language === 'en' ? 'ltr' : 'rtl',
           }}
         >
           <Header menu={menu} />
@@ -79,7 +80,7 @@ export default function Home() {
                   onChange={handelSerch}
                 />
                 <Search
-                  className="absolute right-[10px] top-[4px]"
+                  className={`absolute ${menu?.template.language === 'en' ? "right-[10px]" : "left-[10px]"}  top-[4px]`}
                   style={{
                     color: menu?.template.primaryColor,
                   }}

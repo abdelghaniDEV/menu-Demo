@@ -47,7 +47,7 @@ export default function ProductCart({
       >
         <div>
           <h1
-            className="font-[500]"
+            className="font-[600] text-[20px]"
             style={{
               color: template?.titleColor,
             }}
@@ -60,12 +60,14 @@ export default function ProductCart({
         </div>
         <div>
           <span
-            className="font-[500] text-[14px]"
+            className="font-[600] text-[13px]"
             style={{
               color: template?.titleColor,
+              fontSize : template?.language === 'en' ? '13px' : '18px',
+              
             }}
           >
-            ${price}
+            {template?.currency} {price}
           </span>
         </div>
       </div>
@@ -85,7 +87,7 @@ export default function ProductCart({
         <DialogContent className="rounded-t-[50px] border-none">
           <DialogHeader>
             <DialogDescription>
-              <div className="relative">
+              <div className="relative" >
                 <img
                   src={image}
                   className="rounded-t-[50px] w-full h-[350px]"
@@ -95,9 +97,12 @@ export default function ProductCart({
                   onClick={() => setOpen(false)}
                 /> */}
               </div>
-              <div className="container flex flex-col gap-[5px] py-3 text-black text-start">
+              <div className="container flex flex-col gap-[5px] py-3 text-black text-start" style={{ 
+                fontFamily : template?.fontFamily,
+               direction: template?.language === 'en' ? 'ltr' : 'rtl',
+               }}>
                 <h1 className="font-[600] text-[20px]">{name}</h1>
-                <span className="font-[600] ">{price} $</span>
+                <span className="font-[600] text-[14px] ">{price} {template.currency}</span>
                 <p className="text-[14px]">{description}</p>
               </div>
             </DialogDescription>

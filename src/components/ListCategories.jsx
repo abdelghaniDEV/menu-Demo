@@ -20,7 +20,7 @@ export default function ListCategories({
   };
 
   return (
-    <div className="py-2 container ">
+    <div className="py-2 md:py-6 container ">
       <Swiper
         slidesPerView={4} // عدد الشرائح المعروضة في نفس الوقت
         spaceBetween={4} // المسافة بين الشرائح
@@ -43,7 +43,7 @@ export default function ListCategories({
         {categories?.map((category) => (
           <SwiperSlide key={category._id} >
             <Button
-              className="h-8 w-[80px] border-[1px] rounded-[6px] mx-1"
+              className="h-8 w-[80px] border-[1px] rounded-[6px] mx-1 text-[14px]"
               style={{
                 backgroundColor:
                   activeCategory === category._id

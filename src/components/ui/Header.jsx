@@ -26,7 +26,7 @@ export default function Header({ menu }) {
       }}
     >
       <div>
-        <span className="text-[20px] font-[600]">
+        <span className="text-[30px] font-[600]">
           {menu?.restaurantId.name}
         </span>
         <div className="flex items-center gap-1">
@@ -36,7 +36,7 @@ export default function Header({ menu }) {
               color: menu?.template.primaryColor,
             }}
           />
-          <span className=" text-gray-600 text-[12px]">
+          <span className=" text-gray-600 text-[13px]">
             {menu?.restaurantId.address}
           </span>
         </div>
