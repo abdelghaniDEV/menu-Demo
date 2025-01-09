@@ -47,7 +47,7 @@ export default function ProductCart({
       >
         <div>
           <h1
-            className="font-[600] text-[20px]"
+            className="font-[600] text-[17px]"
             style={{
               color: template?.titleColor,
             }}
