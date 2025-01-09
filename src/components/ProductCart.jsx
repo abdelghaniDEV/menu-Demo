@@ -54,7 +54,7 @@ export default function ProductCart({
           >
             {name}
           </h1>
-          <p className="text-[12px] overflow-hidden line-clamp-2">
+          <p className="text-[13px] overflow-hidden line-clamp-2">
             {description}
           </p>
         </div>

@@ -7,7 +7,7 @@ import meals003 from "../assets/meals0003.png";
 import burger from "../assets/burger.jpg";
 import meals004 from "../assets/mels0005.avif";
 import meals0005 from "../assets/meals0004.avif";
-import leading from "../assets/aniamte.svg"
+import leading from "../assets/aniamte.svg";
 import { useParams } from "react-router";
 import axios from "axios";
 
@@ -58,7 +58,10 @@ export default function Home() {
     <>
       {loading === false ? (
         <div className="reltive">
-           <img src={leading}  className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"/>
+          <img
+            src={leading}
+            className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+          />
         </div>
       ) : (
         <div
@@ -66,11 +69,11 @@ export default function Home() {
           style={{
             backgroundColor: menu?.template.BackgroundColor,
             fontFamily: menu?.template.fontFamily,
-            direction: menu?.template.language === 'en' ? 'ltr' : 'rtl',
+            direction: menu?.template.language === "en" ? "ltr" : "rtl",
           }}
         >
-          <Header menu={menu} />
           <div>
+            <Header menu={menu} />
             <div className="container">
               <div className="relative my-2">
                 <input
@@ -80,19 +83,41 @@ export default function Home() {
                   onChange={handelSerch}
                 />
                 <Search
-                  className={`absolute ${menu?.template.language === 'en' ? "right-[10px]" : "left-[10px]"}  top-[4px]`}
+                  className={`absolute ${
+                    menu?.template.language === "en"
+                      ? "right-[10px]"
+                      : "left-[10px]"
+                  }  top-[4px]`}
                   style={{
                     color: menu?.template.primaryColor,
                   }}
                 />
               </div>
             </div>
+            {menu?.template.banner && (
+              <div className="relative z-[1000]">
+                <img
+                  src={menu?.template.banner}
+                  className="w-full max-h-[150px] object-cover container rounded-[30px] relative z-[20]"
+                  alt="Banner"
+                />
+                <div
+                  className="h-10 absolute top-[50%] translate-y-[-50%] z-[10] w-full"
+                  style={{
+                    backgroundColor: menu?.template.primaryColor,
+                  }}
+                ></div>
+              </div>
+            )}
             <ListCategories
               categories={menu?.categorys}
               products={products}
               template={menu?.template}
               setFilter={setFilter}
             />
+          </div>
+
+          <div>
             <div>
               <div className="grid grid-cols-1 md:grid-cols-3 container gap-2 md:gap-6">
                 {filter?.map((product) => {

@@ -20,7 +20,7 @@ export default function ListCategories({
   };
 
   return (
-    <div className="py-2 md:py-6 container ">
+    <div className="py-3 md:py-6 container ">
       <Swiper
         slidesPerView={4} // عدد الشرائح المعروضة في نفس الوقت
         spaceBetween={4} // المسافة بين الشرائح
