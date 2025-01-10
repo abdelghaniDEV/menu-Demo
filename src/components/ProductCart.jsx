@@ -61,7 +61,7 @@ export default function ProductCart({
           >
             {name}
           </h1>
-          <p className="text-[13px] overflow-hidden line-clamp-2" style={{ 
+          <p className="text-[13px] overflow-hidden line-clamp-2 h-10" style={{ 
             color: template?.textColor,
             
            }}>
