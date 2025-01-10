@@ -1,4 +1,4 @@
-import { Globe, Info, MapPin } from "lucide-react";
+import { Globe, Info, MapPin, Search } from "lucide-react";
 import React from "react";
 import {
   DropdownMenu,
@@ -26,7 +26,7 @@ export default function Header({ menu }) {
       }}
     >
       <div>
-        <span className="text-[30px] font-[600]">
+        <span className="text-[30px] md:text-[20px] font-[600]">
           {menu?.restaurantId.name}
         </span>
         <div className="flex items-center gap-1">
@@ -41,6 +41,24 @@ export default function Header({ menu }) {
           </span>
         </div>
       </div>
+      <div className="container w-[800px] hidden md:block">
+        <div className="relative my-2">
+          <input
+            type="text"
+            placeholder="Search Here ..."
+            className="h-8  rounded-[16px] text-[14px] w-full bg-[#F5F5F8] px-4 py-1 focus:outline-none "
+            // onChange={handelSerch}
+          />
+          <Search
+            className={`absolute ${
+              menu?.template.language === "en" ? "right-[10px]" : "left-[10px]"
+            }  top-[4px]`}
+            style={{
+              color: menu?.template.primaryColor,
+            }}
+          />
+        </div>
+      </div>
       <div>
         <Sheet>
           <SheetTrigger>
@@ -51,14 +69,16 @@ export default function Header({ menu }) {
               }}
             />
           </SheetTrigger>
-          <SheetContent className="w-full" >
+          <SheetContent className="w-full">
             <SheetHeader>
               <SheetTitle></SheetTitle>
-              <div className="flex flex-col gap-2 items-center py-4" style={{ 
-                backgroundColor: menu?.template.backgroundColor,
-                fontFamily: menu?.template.fontFamily,
-               
-               }}>
+              <div
+                className="flex flex-col gap-2 items-center py-4"
+                style={{
+                  backgroundColor: menu?.template.backgroundColor,
+                  fontFamily: menu?.template.fontFamily,
+                }}
+              >
                 <div>
                   <img
                     src={menu?.restaurantId.image}

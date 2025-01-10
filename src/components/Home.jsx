@@ -106,7 +106,7 @@ export default function Home() {
                     </div>
                 </div>
               </div>}
-            <div className="container">
+            <div className="container md:hidden">
               <div className="relative my-2">
                 <input
                   type="text"

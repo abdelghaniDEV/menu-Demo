@@ -41,9 +41,9 @@ export default function ListCategories({
         }}
       >
         {categories?.map((category) => (
-          <SwiperSlide key={category._id} >
+          <SwiperSlide key={category._id} style={{}} >
             <Button
-              className="h-8 w-[80px] md:h-10 md:w-[90px] border-[1px] rounded-[6px] mx-1 text-[14px]"
+                className="min-h-[32px] w-[80px] md:min-h-[40px] md:w-[100px] border-[1px] rounded-[6px] mx-1 text-[14px] break-words text-center"
               style={{
                 backgroundColor:
                   activeCategory === category._id
