@@ -12,6 +12,7 @@ import { useParams } from "react-router";
 import axios from "axios";
 import { Button } from "./ui/button";
 
+
 export default function Home() {
   const [menu, setMenu] = useState();
   const [products, setProducts] = useState();
@@ -89,11 +90,13 @@ export default function Home() {
                   
                 ></div>
                 <div className="absolute top-[50%] left-[50%] hidden md:block translate-x-[-50%] translate-y-[-50%] i z-[100]   ">
-                    <div className="flex flex-col items-center justify-center">
+                    <div className="flex flex-col gap-2 items-center justify-center" style={{ 
+                       fontFamily: '"Oleo Script", serif',
+                     }}>
                     <p className="text-[50px] text-white text-center font-[600]     ">
                       Welcom {menu?.restaurantId.name}
                     </p>
-                    <Button className="text-white py-4 px-6 text-[20px] rounded-[5px] " style={{ 
+                    <Button className="text-white py-6 px-10 text-[20px] rounded-[5px] " style={{ 
                       backgroundColor: menu?.template.primaryColor,
                      }} >
                         About Us

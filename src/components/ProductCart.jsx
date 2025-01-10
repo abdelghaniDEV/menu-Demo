@@ -17,6 +17,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { motion } from "motion/react"
 
 import { Card } from "./ui/card";
 
@@ -40,7 +41,13 @@ export default function ProductCart({
   };
 
   return (
-    <div className="flex justify-between md:flex-row-reverse border-b-[1px] cursor-pointer md:border-none pb-2  ">
+    <motion.div 
+      initial={{ opacity: 0}}
+      whileInView={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    
+    className="flex justify-between md:flex-row-reverse border-b-[1px] md:border-[1px] md:overflow-hidden md:py-1 md:px-1 cursor-pointer  pb-2  ">
       <div
         className="w-[70%] flex flex-col justify-between "
         onClick={() => setOpen(true)}
@@ -84,20 +91,20 @@ export default function ProductCart({
         ></div>
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="rounded-t-[50px] border-none">
+        <DialogContent className="rounded-t-[50px] border-none md:w-[450px]">
           <DialogHeader>
             <DialogDescription>
               <div className="relative" >
                 <img
                   src={image}
-                  className="rounded-t-[50px] w-full h-[350px]"
+                  className="rounded-t-[50px] md:rounded-none w-full  h-[350px]"
                 />
                 {/* <X
                   className="absolute top-4 h-8 w-8 right-4 bg-white p-1 rounded-full cursor-pointer"
                   onClick={() => setOpen(false)}
                 /> */}
               </div>
-              <div className="container flex flex-col gap-[5px] py-3 text-black text-start" style={{ 
+              <div className="container md:px-4 flex flex-col gap-[5px] py-3 text-black text-start" style={{ 
                 fontFamily : template?.fontFamily,
                direction: template?.language === 'en' ? 'ltr' : 'rtl',
                }}>
@@ -109,6 +116,6 @@ export default function ProductCart({
           </DialogHeader>
         </DialogContent>
       </Dialog>
-    </div>
+    </motion.div>
   );
 }
