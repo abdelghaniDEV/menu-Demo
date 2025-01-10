@@ -11,6 +11,7 @@ import leading from "../assets/aniamte.svg";
 import { useParams } from "react-router";
 import axios from "axios";
 import { Button } from "./ui/button";
+import logo from "../assets/logo-v3.png"
 
 
 export default function Home() {
@@ -58,12 +59,13 @@ export default function Home() {
   };
   return (
     <>
-      {loading === false ? (
+      {loading ===  false? (
         <div className="reltive">
           <img
             src={leading}
-            className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+            className="absolute top-[50%] w-[120px] left-[50%] translate-x-[-50%] translate-y-[-50%]"
           />
+          <img src={logo} className="w-[60px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
         </div>
       ) : (
         <div
