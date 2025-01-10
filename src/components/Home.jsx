@@ -10,6 +10,7 @@ import meals0005 from "../assets/meals0004.avif";
 import leading from "../assets/aniamte.svg";
 import { useParams } from "react-router";
 import axios from "axios";
+import { Button } from "./ui/button";
 
 export default function Home() {
   const [menu, setMenu] = useState();
@@ -74,6 +75,32 @@ export default function Home() {
         >
           <div>
             <Header menu={menu} />
+            {menu?.template.showBanner &&  <div className="relative z-[30] py-3">
+                <img
+                  src={menu?.template.banner}
+                  className="w-full h-[150px] object-cover  relative z-[20] md:h-[300px] md:brightness-50 "
+                  alt="Banner"
+                />
+                <div
+                  className="h-10 absolute top-[50%] translate-y-[-50%] z-[10] w-full"
+                  style={{
+                    backgroundColor: menu?.template.primaryColor,
+                  }}
+                  
+                ></div>
+                <div className="absolute top-[50%] left-[50%] hidden md:block translate-x-[-50%] translate-y-[-50%] i z-[100]   ">
+                    <div className="flex flex-col items-center justify-center">
+                    <p className="text-[50px] text-white text-center font-[600]     ">
+                      Welcom {menu?.restaurantId.name}
+                    </p>
+                    <Button className="text-white py-4 px-6 text-[20px] rounded-[5px] " style={{ 
+                      backgroundColor: menu?.template.primaryColor,
+                     }} >
+                        About Us
+                    </Button>
+                    </div>
+                </div>
+              </div>}
             <div className="container">
               <div className="relative my-2">
                 <input
@@ -94,21 +121,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            {menu?.template.banner && (
-              <div className="relative z-[1000]">
-                <img
-                  src={menu?.template.banner}
-                  className="w-full max-h-[150px] object-cover container rounded-[30px] relative z-[20]"
-                  alt="Banner"
-                />
-                <div
-                  className="h-10 absolute top-[50%] translate-y-[-50%] z-[10] w-full"
-                  style={{
-                    backgroundColor: menu?.template.primaryColor,
-                  }}
-                ></div>
-              </div>
-            )}
+           
             <ListCategories
               categories={menu?.categorys}
               products={products}
